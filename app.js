@@ -12,10 +12,10 @@ let correctNumber = Math.ceil(Math.random() * 20);
 attemptsDisplay.textContent = `${attemptsLeft} attempts left!`;
 
 // set event listeners to update state and DOM
+
 submitButton.addEventListener('click', () => {
     const userNumberify = userNumber.value;
-    console.log(correctNumber)
-    
+
     if (userNumberify < correctNumber) {
         notifyDisplay.textContent = 'Too Low!';
         attemptsLeft--;
@@ -25,16 +25,14 @@ submitButton.addEventListener('click', () => {
         attemptsLeft--;
         attemptsDisplay.textContent = `${attemptsLeft} attempts left!`;
     } else {
-        notifyDisplay.textContent = 'You Guessed the Number!!!';
-        submitButton.disabled = true;
-    };
-
-    if (attemptsLeft === 0) {
-        notifyDisplay.textContent = 'You ran out of attempts...';
-        submitButton.disabled = true;
+        notifyDisplay.textContent = `You Guessed the Number!!!`;
+        submitButton.disable = true;
     }
 
-
+    if (attemptsLeft === 0) {
+        notifyDisplay.textContent = `You ran out of attempts...`;
+        submitButton.disabled = true;
+    }
 });
 
 resetButton.addEventListener('click', () => {
@@ -42,6 +40,6 @@ resetButton.addEventListener('click', () => {
     attemptsDisplay.textContent = `${attemptsLeft} attempts left!`;
     notifyDisplay.textContent = '';
     submitButton.disabled = false;
-    correctNumber = Math.ceil(Math.random() * 20)
-    console.log(correctNumber)
-})
+    correctNumber = Math.ceil(Math.random() * 20);
+});
+
